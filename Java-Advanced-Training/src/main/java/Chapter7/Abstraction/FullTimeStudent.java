@@ -9,6 +9,10 @@ public class FullTimeStudent extends Student{
 
     private double examMark;
 
+    public FullTimeStudent(String studentNum, String firstname, String lastname, String email) {
+        super(studentNum, firstname, lastname, email);
+    }
+
     public double getExamMark() {
         return examMark;
     }
@@ -20,25 +24,21 @@ public class FullTimeStudent extends Student{
     /**
      * Calculate and return the Semester Mark
      *
-     * @param test        Test Mark as an integer
-     * @param assignment1 Assignment 1 Mark as an integer
-     * @param assignment2 Assignment 2 Mark as an integer
-     * @return Semester Mark
+     * @return
      */
     @Override
-    public double calculateSemesterMark(int test, int assignment1, int assignment2) {
-        return (test * 0.34) + (assignment1 * 0.33) + (assignment2 * 0.33);
+    public double calculateSemesterMark() {
+        return (testMark * 0.34) + (assignment1 * 0.33) + (assignment2 * 0.33);
     }
 
     /**
      * Calculate and return the Final Mark
      *
-     * @param semesterMark Semester Mark
      * @return Final Mark
      */
     @Override
-    public double calculateFinalMark(double semesterMark) {
-        return (semesterMark + getExamMark() / 2);
+    public double calculateFinalMark() {
+        return (calculateSemesterMark() + getExamMark() / 2);
     }
 
     /**

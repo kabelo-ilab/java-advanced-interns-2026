@@ -46,7 +46,7 @@ public class Student {
 
     /**
      * Set Student's firstname
-     * @param firstname
+     * @param firstname Firstname
      */
     public void setFirstname(String firstname) {
         this.firstname = firstname;
@@ -54,7 +54,7 @@ public class Student {
 
     /**
      * Set Student's lastname
-     * @param lastname
+     * @param lastname Lastname
      */
     public void setLastname(String lastname) {
         this.lastname = lastname;
@@ -62,7 +62,7 @@ public class Student {
 
     /**
      * Set Student's email address
-     * @param email
+     * @param email Email Address
      */
     public void setEmail(String email) {
         this.email = email;

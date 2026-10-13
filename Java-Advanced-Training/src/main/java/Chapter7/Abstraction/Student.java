@@ -7,21 +7,30 @@ package Chapter7.Abstraction;
  **/
 public abstract class Student {
 
+    protected String studentNum;
+    protected String firstname;
+    protected String lastname;
+    protected String email;
+    protected int testMark, assignment1, assignment2;
+
+    public Student(String studentNum, String firstname, String lastname, String email) {
+        this.studentNum = studentNum;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+    }
+
     /**
      * Calculate and return the Semester Mark
-     * @param test Test Mark as an integer
-     * @param assignment1 Assignment 1 Mark as an integer
-     * @param assignment2 Assignment 2 Mark as an integer
      * @return Semester Mark
      */
-    public abstract double calculateSemesterMark(int test, int assignment1, int assignment2);
+    public abstract double calculateSemesterMark();
 
     /**
      * Calculate and return the Final Mark
-     * @param semesterMark Semester Mark
      * @return Final Mark
      */
-    public abstract double calculateFinalMark(double semesterMark);
+    public abstract double calculateFinalMark();
 
     /**
      * Display Student details
