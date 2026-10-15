@@ -64,4 +64,24 @@ public class BankAccountTest {
     void getAccountDetails(){
         System.err.println(objAcc.displayDetails());
     }
+    @Test
+    void testAccountNumberPrefix(){
+        String accountNumber = "123456";
+        String accountHolder = "John Smith";
+        double balance = 5000;
+
+        BankAccount objLoan = new BankAccount(accountHolder,accountNumber,AccountType.LOAN,balance);
+        BankAccount objDebit = new BankAccount(accountHolder,accountNumber,AccountType.DEBIT,balance);
+        BankAccount objCheque = new BankAccount(accountHolder,accountNumber,AccountType.CHEQUE,balance);
+        BankAccount objCredit = new BankAccount(accountHolder,accountNumber,AccountType.CREDIT,balance);
+        BankAccount objSavings = new BankAccount(accountHolder,accountNumber,AccountType.SAVINGS,balance);
+
+        assertAll(
+                () -> assertEquals("LN-" + accountNumber, objLoan.getAccountNumber()),
+                () -> assertEquals("DB-" + accountNumber, objDebit.getAccountNumber()),
+                () -> assertEquals("CQ-" + accountNumber, objCheque.getAccountNumber()),
+                () -> assertEquals("CR-" + accountNumber, objCredit.getAccountNumber()),
+                () -> assertEquals("SV-" + accountNumber, objSavings.getAccountNumber())
+        );
+    }
 }

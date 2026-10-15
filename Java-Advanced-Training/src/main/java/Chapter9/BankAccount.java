@@ -32,8 +32,8 @@ public class BankAccount {
     public BankAccount(String accountHolder, String accountNumber, AccountType accountType,
                        double balance) {
         setAccountHolder(accountHolder);
-        setAccountNumber(accountNumber);
         setAccountType(accountType);
+        setAccountNumber(accountNumber);
         setBalance(balance);
     }
 
